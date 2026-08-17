@@ -1,0 +1,1258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>OMUSATI TRUCKS, TRACTORS AND AUTO ENGINEERING</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f4f4f4;
+            color: #222;
+        }
+
+        /* HEADER */
+        header {
+            background: #111;
+            color: white;
+            padding: 15px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+            color: #ffcc00;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #ffcc00;
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 90vh;
+            background:
+                linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+                url("https://images.unsplash.com/photo-1487754180451-c456f719a1fc?auto=format&fit=crop&w=1600&q=80");
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 30px;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 900px;
+        }
+
+        .hero h1 {
+            font-size: 55px;
+            margin-bottom: 20px;
+            color: #ffcc00;
+        }
+
+        .hero p {
+            font-size: 22px;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #ffcc00;
+            color: #111;
+            padding: 14px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 5px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: #e6b800;
+        }
+
+        .btn-dark {
+            background: #222;
+            color: white;
+        }
+
+        /* GENERAL */
+        section {
+            padding: 70px 7%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-title h2 {
+            font-size: 35px;
+            color: #111;
+        }
+
+        .section-title p {
+            margin-top: 10px;
+            color: #666;
+        }
+
+        /* SERVICES */
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 25px;
+        }
+
+        .service-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .service-card .icon {
+            font-size: 45px;
+            margin-bottom: 15px;
+        }
+
+        .service-card h3 {
+            margin-bottom: 12px;
+        }
+
+        /* ABOUT */
+        .about {
+            background: #111;
+            color: white;
+        }
+
+        .about-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .about img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .about h2 {
+            color: #ffcc00;
+            font-size: 38px;
+            margin-bottom: 20px;
+        }
+
+        .about p {
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        /* VEHICLE CHECK */
+        .vehicle-box {
+            background: white;
+            padding: 35px;
+            max-width: 900px;
+            margin: auto;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group.full {
+            grid-column: 1 / -1;
+        }
+
+        label {
+            font-weight: bold;
+            margin-bottom: 7px;
+        }
+
+        input,
+        select,
+        textarea {
+            padding: 13px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 15px;
+        }
+
+        textarea {
+            min-height: 130px;
+            resize: vertical;
+        }
+
+        /* PRICING */
+        .pricing {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 25px;
+        }
+
+        .price-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .price {
+            font-size: 30px;
+            font-weight: bold;
+            color: #d99f00;
+            margin: 15px;
+        }
+
+        .price-card ul {
+            list-style: none;
+            line-height: 2;
+        }
+
+        /* GALLERY */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        /* CONTACT */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .contact-box {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+        }
+
+        .contact-item {
+            margin: 20px 0;
+            font-size: 17px;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #111;
+            color: white;
+            text-align: center;
+            padding: 35px;
+        }
+
+        footer span {
+            color: #ffcc00;
+        }
+
+
+        /* HERO OPERATING HOURS */
+        .hero-hours {
+            position: absolute;
+            left: 7%;
+            bottom: 35px;
+            background: rgba(17,17,17,0.88);
+            border-left: 4px solid #ffcc00;
+            padding: 15px 20px;
+            text-align: left;
+            border-radius: 6px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.35);
+        }
+
+        .hero-hours h3 {
+            color: #ffcc00;
+            margin-bottom: 7px;
+            font-size: 18px;
+        }
+
+        .hero-hours p {
+            margin: 3px 0;
+            font-size: 14px;
+        }
+
+        /* MAP */
+        .map-box {
+            overflow: hidden;
+            border-radius: 10px;
+            min-height: 430px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.12);
+            background: white;
+        }
+
+        .map-box iframe {
+            width: 100%;
+            height: 430px;
+            border: 0;
+            display: block;
+        }
+
+        /* FOOTER CONTACT + SOCIALS */
+        .footer-contact {
+            max-width: 1100px;
+            margin: 0 auto 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 25px;
+            flex-wrap: wrap;
+            text-align: left;
+        }
+
+        .footer-contact-info {
+            line-height: 1.8;
+        }
+
+        .footer-contact-info i {
+            color: #ffcc00;
+            width: 22px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 12px;
+        }
+
+        .social-links a {
+            width: 42px;
+            height: 42px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #222;
+            color: white;
+            border-radius: 50%;
+            text-decoration: none;
+            font-size: 19px;
+            transition: 0.3s;
+        }
+
+        .social-links a:hover {
+            background: #ffcc00;
+            color: #111;
+            transform: translateY(-3px);
+        }
+
+        .footer-address {
+            margin-top: 5px;
+            color: #ddd;
+        }
+
+        @media(max-width: 768px) {
+            .hero-hours {
+                left: 20px;
+                bottom: 20px;
+                right: 20px;
+            }
+
+            .footer-contact {
+                text-align: center;
+                justify-content: center;
+            }
+
+            .map-box iframe {
+                height: 350px;
+            }
+        }
+
+        /* MOBILE */
+        @media(max-width: 768px) {
+
+            header {
+                flex-direction: column;
+            }
+
+            nav {
+                margin-top: 15px;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 5px;
+                font-size: 13px;
+            }
+
+            .hero h1 {
+                font-size: 35px;
+            }
+
+            .hero p {
+                font-size: 17px;
+            }
+
+            .about-container,
+            .contact-container,
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-group.full {
+                grid-column: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header>
+
+    <div class="logo">
+        OMUSATI AUTO
+    </div>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#booking">Booking</a>
+        <a href="#parts">Parts</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+</header>
+
+
+<!-- ================= HOME ================= -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <h1>OMUSATI TRUCKS, TRACTORS AND AUTO ENGINEERING</h1>
+
+        <p>
+            Professional Truck, Tractor and Automotive Engineering Services
+        </p>
+
+        <a href="#booking" class="btn">
+            Book A Service
+        </a>
+
+        <a href="#contact" class="btn btn-dark">
+            Contact Us
+        </a>
+
+    </div>
+
+    <div class="hero-hours">
+        <h3><i class="fa-solid fa-clock"></i> Operating Hours</h3>
+        <p><strong>Mon - Fri:</strong> 08:00 - 17:00</p>
+        <p><strong>Saturday:</strong> 08:00 - 13:00</p>
+        <p><strong>Sunday:</strong> Closed</p>
+    </div>
+
+</section>
+
+
+<!-- ================= SERVICES ================= -->
+
+<section id="services">
+
+    <div class="section-title">
+
+        <h2>Our Services</h2>
+
+        <p>
+            Complete mechanical and engineering solutions for your vehicles
+        </p>
+
+    </div>
+
+
+    <div class="services">
+
+        <div class="service-card">
+            <div class="icon">🚛</div>
+            <h3>Truck Repairs</h3>
+            <p>
+                Complete truck diagnostics, engine repairs,
+                transmission and brake services.
+            </p>
+        </div>
+
+
+        <div class="service-card">
+            <div class="icon">🚜</div>
+            <h3>Tractor Repairs</h3>
+            <p>
+                Tractor engine servicing, hydraulic systems,
+                electrical systems and general repairs.
+            </p>
+        </div>
+
+
+        <div class="service-card">
+            <div class="icon">🚗</div>
+            <h3>Vehicle Repairs</h3>
+            <p>
+                Professional servicing and repairs for cars,
+                bakkies and other vehicles.
+            </p>
+        </div>
+
+
+        <div class="service-card">
+            <div class="icon">🔧</div>
+            <h3>Engine Overhaul</h3>
+            <p>
+                Engine rebuilding, component replacement,
+                inspection and testing.
+            </p>
+        </div>
+
+
+        <div class="service-card">
+            <div class="icon">⚙️</div>
+            <h3>Transmission</h3>
+            <p>
+                Manual and automatic transmission inspection
+                and repair services.
+            </p>
+        </div>
+
+
+        <div class="service-card">
+            <div class="icon">🔋</div>
+            <h3>Auto Electrical</h3>
+            <p>
+                Battery, alternator, starter motor,
+                wiring and electrical diagnostics.
+            </p>
+        </div>
+
+
+        <div class="service-card">
+            <div class="icon">🛞</div>
+            <h3>Brakes & Suspension</h3>
+            <p>
+                Brake system inspection, suspension repairs
+                and wheel-related services.
+            </p>
+        </div>
+
+
+        <div class="service-card">
+            <div class="icon">💻</div>
+            <h3>Computer Diagnostics</h3>
+            <p>
+                Electronic vehicle diagnostics and fault-code
+                identification.
+            </p>
+        </div>
+
+
+        <div class="service-card">
+            <div class="icon">🛢️</div>
+            <h3>Oil & Filter Service</h3>
+            <p>
+                Engine oil replacement, oil filters,
+                fuel filters and air filters.
+            </p>
+        </div>
+
+
+        <div class="service-card">
+            <div class="icon">❄️</div>
+            <h3>Air Conditioning</h3>
+            <p>
+                Vehicle air-conditioning inspection,
+                servicing and repairs.
+            </p>
+        </div>
+
+
+        <div class="service-card">
+            <div class="icon">🏗️</div>
+            <h3>Heavy Equipment</h3>
+            <p>
+                Mechanical services for heavy machinery
+                and construction equipment.
+            </p>
+        </div>
+
+
+        <div class="service-card">
+            <div class="icon">🔩</div>
+            <h3>Welding & Fabrication</h3>
+            <p>
+                Metal fabrication, welding and custom
+                engineering work.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= ABOUT ================= -->
+
+<section class="about" id="about">
+
+    <div class="about-container">
+
+        <div>
+
+            <h2>About OMUSATI</h2>
+
+            <p>
+                OMUSATI TRUCKS, TRACTORS AND AUTO ENGINEERING
+                provides professional mechanical and engineering
+                services for trucks, tractors, cars and heavy
+                equipment.
+            </p>
+
+            <p>
+                Our goal is to provide reliable workmanship,
+                quality repairs and professional customer service.
+            </p>
+
+            <p>
+                Whether you need routine servicing, diagnostics,
+                engine repairs or major mechanical work, our
+                workshop is ready to assist.
+            </p>
+
+            <a href="#booking" class="btn">
+                Request Service
+            </a>
+
+        </div>
+
+        <div>
+
+            <img src="https://images.unsplash.com/photo-1504222490345-c075b6008014?auto=format&fit=crop&w=1000&q=80"
+                 alt="Automotive workshop">
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= BOOKING ================= -->
+
+<section id="booking">
+
+    <div class="section-title">
+
+        <h2>Book A Service</h2>
+
+        <p>
+            Fill in the form below to request a service appointment.
+        </p>
+
+    </div>
+
+
+    <div class="vehicle-box">
+
+        <form>
+
+            <div class="form-grid">
+
+                <div class="form-group">
+
+                    <label>Full Name</label>
+
+                    <input type="text"
+                           placeholder="Enter your name"
+                           required>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>Phone Number</label>
+
+                    <input type="tel"
+                           placeholder="Enter phone number"
+                           required>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>Email</label>
+
+                    <input type="email"
+                           placeholder="Enter email">
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>Vehicle Type</label>
+
+                    <select>
+
+                        <option>Select vehicle</option>
+                        <option>Car</option>
+                        <option>Bakkie</option>
+                        <option>Truck</option>
+                        <option>Tractor</option>
+                        <option>Bus</option>
+                        <option>Trailer</option>
+                        <option>Construction Equipment</option>
+                        <option>Other</option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>Vehicle Make</label>
+
+                    <input type="text"
+                           placeholder="Toyota, MAN, Scania, John Deere...">
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>Model</label>
+
+                    <input type="text"
+                           placeholder="Vehicle model">
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>Registration Number</label>
+
+                    <input type="text"
+                           placeholder="Vehicle registration">
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>Service Required</label>
+
+                    <select>
+
+                        <option>Select service</option>
+                        <option>General Service</option>
+                        <option>Engine Repair</option>
+                        <option>Engine Overhaul</option>
+                        <option>Brake Repair</option>
+                        <option>Transmission Repair</option>
+                        <option>Electrical Repair</option>
+                        <option>Diagnostics</option>
+                        <option>Air Conditioning</option>
+                        <option>Tractor Repair</option>
+                        <option>Truck Repair</option>
+                        <option>Welding & Fabrication</option>
+                        <option>Other</option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>Preferred Date</label>
+
+                    <input type="date">
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>Preferred Time</label>
+
+                    <input type="time">
+
+                </div>
+
+
+                <div class="form-group full">
+
+                    <label>Describe The Problem</label>
+
+                    <textarea
+                        placeholder="Describe the vehicle problem or service you require..."></textarea>
+
+                </div>
+
+
+                <div class="form-group full">
+
+                    <div style="display:flex; gap:12px; flex-wrap:wrap;">
+                        <button class="btn" type="submit">
+                            <i class="fa-brands fa-whatsapp"></i> Submit Booking via WhatsApp
+                        </button>
+
+                        <button class="btn btn-dark" type="button" id="gmailBookingBtn">
+                            <i class="fa-solid fa-envelope"></i> Send Booking via Gmail
+                        </button>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</section>
+
+
+<!-- ================= PARTS ================= -->
+
+<section id="parts">
+
+    <div class="section-title">
+
+        <h2>Automotive Parts</h2>
+
+        <p>
+            We can assist with sourcing parts for various vehicles and machinery.
+        </p>
+
+    </div>
+
+
+    <div class="services">
+
+        <div class="service-card">
+            <div class="icon">⚙️</div>
+            <h3>Engine Parts</h3>
+            <p>Pistons, bearings, gaskets, filters and engine components.</p>
+        </div>
+
+        <div class="service-card">
+            <div class="icon">🔩</div>
+            <h3>Suspension Parts</h3>
+            <p>Shock absorbers, bushes, springs and suspension components.</p>
+        </div>
+
+        <div class="service-card">
+            <div class="icon">🛞</div>
+            <h3>Brake Parts</h3>
+            <p>Brake pads, discs, drums, brake shoes and related components.</p>
+        </div>
+
+        <div class="service-card">
+            <div class="icon">🔋</div>
+            <h3>Electrical Parts</h3>
+            <p>Batteries, alternators, starters, sensors and electrical components.</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= PRICE ================= -->
+
+<section>
+
+    <div class="section-title">
+
+        <h2>Service Packages</h2>
+
+        <p>Choose a service package that suits your vehicle.</p>
+
+    </div>
+
+
+    <div class="pricing">
+
+        <div class="price-card">
+
+            <h3>Basic Service</h3>
+
+            <div class="price">N$ XXX</div>
+
+            <ul>
+                <li>✓ Engine Oil Check</li>
+                <li>✓ Oil Filter</li>
+                <li>✓ Fluid Inspection</li>
+                <li>✓ Basic Inspection</li>
+            </ul>
+
+            <a href="#booking" class="btn">
+                Book Now
+            </a>
+
+        </div>
+
+
+        <div class="price-card">
+
+            <h3>Full Service</h3>
+
+            <div class="price">N$ XXX</div>
+
+            <ul>
+                <li>✓ Oil & Filter</li>
+                <li>✓ Brake Inspection</li>
+                <li>✓ Suspension Check</li>
+                <li>✓ Electrical Check</li>
+                <li>✓ Computer Diagnostics</li>
+            </ul>
+
+            <a href="#booking" class="btn">
+                Book Now
+            </a>
+
+        </div>
+
+
+        <div class="price-card">
+
+            <h3>Heavy Vehicle</h3>
+
+            <div class="price">QUOTE</div>
+
+            <ul>
+                <li>✓ Truck Inspection</li>
+                <li>✓ Engine Diagnostics</li>
+                <li>✓ Brake Inspection</li>
+                <li>✓ Transmission Check</li>
+                <li>✓ Complete Report</li>
+            </ul>
+
+            <a href="#booking" class="btn">
+                Request Quote
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= GALLERY ================= -->
+
+<section id="gallery">
+
+    <div class="section-title">
+
+        <h2>Our Workshop</h2>
+
+        <p>Take a look at the type of work we do.</p>
+
+    </div>
+
+
+    <div class="gallery">
+
+        <img src="https://images.unsplash.com/photo-1486006920555-c77dcf18193c?auto=format&fit=crop&w=800&q=80">
+
+        <img src="https://images.unsplash.com/photo-1530046339160-ce3e530c7d2f?auto=format&fit=crop&w=800&q=80">
+
+        <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=800&q=80">
+
+        <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=800&q=80">
+
+    </div>
+
+</section>
+
+
+<!-- ================= CONTACT ================= -->
+
+<section id="contact">
+
+    <div class="section-title">
+
+        <h2>Contact OMUSATI</h2>
+
+        <p>Get in touch with our workshop.</p>
+
+    </div>
+
+
+    <div class="contact-container">
+
+
+        <div class="map-box">
+            <iframe
+                src="https://www.google.com/maps?q=-17.4595278,14.8070833&output=embed"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                title="OMUSATI AUTO location map">
+            </iframe>
+        </div>
+
+        <div style="text-align:center; margin-top:15px;">
+            <a class="btn"
+               href="https://www.google.com/maps/search/?api=1&query=-17.4595278,14.8070833"
+               target="_blank"
+               rel="noopener">
+                <i class="fa-solid fa-location-dot"></i> Open Exact Location in Google Maps
+            </a>
+        </div>
+
+
+        <div class="contact-box">
+
+            <h3>Send Us A Message</h3>
+
+            <br>
+
+            <form>
+
+                <input type="text"
+                       placeholder="Your Name"
+                       style="width:100%; margin-bottom:15px;">
+
+                <input type="email"
+                       placeholder="Your Email"
+                       style="width:100%; margin-bottom:15px;">
+
+                <input type="tel"
+                       placeholder="Your Phone"
+                       style="width:100%; margin-bottom:15px;">
+
+                <textarea
+                    placeholder="Your message..."
+                    style="width:100%; margin-bottom:15px;"></textarea>
+
+                <button class="btn" type="submit">
+                    Send Message
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <h3>
+        OMUSATI TRUCKS, TRACTORS AND AUTO ENGINEERING
+    </h3>
+
+    <br>
+
+    <p>
+        Professional Automotive & Heavy Equipment Engineering
+    </p>
+
+    <div class="footer-contact">
+        <div class="footer-contact-info">
+            <div><i class="fa-solid fa-phone"></i> <strong>Phone:</strong> +264 81 851 8195 &nbsp; | &nbsp; +264 81 770 9702</div>
+            <div><i class="fa-solid fa-envelope"></i> <strong>Email:</strong> info@omusatiauto.com</div>
+            <div class="footer-address"><i class="fa-solid fa-location-dot"></i> <strong>Location:</strong> 17°27'34.3&quot;S, 14°48'25.5&quot;E — Omaulayi Cuca Shops, C46, Eonde</div>
+        </div>
+
+        <div class="social-links" aria-label="Social media links">
+            <a href="#" aria-label="Twitter / X" title="Twitter / X"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#" aria-label="Instagram" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" aria-label="LinkedIn" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+    </div>
+
+    <br>
+
+    <p>
+        © 2026 <span>OMUSATI AUTO</span>. All Rights Reserved.
+    </p>
+
+</footer>
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+    // ================= BOOKING FORM =================
+    const bookingForm = document.querySelector("#booking form");
+    const whatsappNumber = "264817709702";
+    const receiverEmail = "ebbenshoombe@gmail.com";
+
+    function getBookingDetails() {
+        const inputs = bookingForm.querySelectorAll("input, select, textarea");
+
+        const fullName = inputs[0].value;
+        const phone = inputs[1].value;
+        const email = inputs[2].value;
+        const vehicleType = inputs[3].value;
+        const vehicleMake = inputs[4].value;
+        const model = inputs[5].value;
+        const registration = inputs[6].value;
+        const service = inputs[7].value;
+        const date = inputs[8].value;
+        const time = inputs[9].value;
+        const problem = inputs[10].value;
+
+        return {
+            fullName,
+            phone,
+            email,
+            vehicleType,
+            vehicleMake,
+            model,
+            registration,
+            service,
+            date,
+            time,
+            problem
+        };
+    }
+
+    function createBookingMessage(b) {
+        return `OMUSATI AUTO - NEW SERVICE BOOKING
+
+Customer Name: ${b.fullName}
+Phone Number: ${b.phone}
+Email: ${b.email || "Not provided"}
+
+Vehicle Type: ${b.vehicleType}
+Vehicle Make: ${b.vehicleMake}
+Model: ${b.model}
+Registration Number: ${b.registration}
+
+Service Required: ${b.service}
+Preferred Date: ${b.date || "Not specified"}
+Preferred Time: ${b.time || "Not specified"}
+
+Description of Problem:
+${b.problem || "No description provided."}`;
+    }
+
+    // WhatsApp submission
+    bookingForm.addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        const b = getBookingDetails();
+        const message = createBookingMessage(b);
+        const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+
+        window.open(whatsappURL, "_blank");
+    });
+
+    // Gmail submission
+    document.getElementById("gmailBookingBtn").addEventListener("click", function() {
+        if (!bookingForm.checkValidity()) {
+            bookingForm.reportValidity();
+            return;
+        }
+
+        const b = getBookingDetails();
+        const subject = `OMUSATI AUTO Service Booking - ${b.fullName}`;
+        const body = createBookingMessage(b);
+
+        // Opens Gmail compose with the booking already addressed to the receiver.
+        const gmailURL =
+            `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(receiverEmail)}` +
+            `&su=${encodeURIComponent(subject)}` +
+            `&body=${encodeURIComponent(body)}`;
+
+        window.open(gmailURL, "_blank");
+    });
+
+    // ================= CONTACT FORM =================
+    document.querySelectorAll("#contact form").forEach(function(form) {
+        form.addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            const inputs = form.querySelectorAll("input, textarea");
+            const name = inputs[0].value;
+            const email = inputs[1].value;
+            const phone = inputs[2].value;
+            const message = inputs[3].value;
+
+            const subject = `OMUSATI AUTO Website Message - ${name}`;
+            const body =
+                `Name: ${name}
+` +
+                `Email: ${email}
+` +
+                `Phone: ${phone}
+
+` +
+                `Message:
+${message}`;
+
+            const gmailURL =
+                `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(receiverEmail)}` +
+                `&su=${encodeURIComponent(subject)}` +
+                `&body=${encodeURIComponent(body)}`;
+
+            window.open(gmailURL, "_blank");
+        });
+    });
+</script>
+
+</body>
+</html>
